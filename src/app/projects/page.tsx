@@ -23,9 +23,9 @@ export default function ProjectsPage() {
         crumbs={[{ name: "Projects", href: "/projects" }]}
       />
 
-      <div className="container-page py-8 md:py-12">
+      <div className="container-page py-2 md:py-12">
         {projects.map((p, i) => (
-          <article id={p.slug} key={p.slug} className="grid scroll-mt-24 gap-8 border-b border-line py-14 last:border-0 md:grid-cols-12 md:py-20">
+          <article id={p.slug} key={p.slug} className="grid scroll-mt-24 gap-6 border-b border-line py-10 last:border-0 md:grid-cols-12 md:gap-8 md:py-20">
             <header className="md:col-span-4">
               <span className="font-mono text-sm text-accent">Project {String(i + 1).padStart(2, "0")}</span>
               <h2 className="mt-3 text-2xl font-semibold leading-tight md:text-3xl">{p.title}</h2>
@@ -44,7 +44,7 @@ export default function ProjectsPage() {
             </header>
 
             <div className="md:col-span-8 md:pl-8">
-              <p className="text-xl leading-relaxed">{p.summary}</p>
+              <p className="text-lg leading-relaxed md:text-xl">{p.summary}</p>
               <h3 className="eyebrow mt-10">The challenge</h3>
               <p className="mt-3 leading-relaxed text-muted">{p.challenge}</p>
               <h3 className="eyebrow mt-8">What we did</h3>

@@ -70,18 +70,18 @@ export default function Home() {
     <>
       {/* Hero */}
       <section className="border-b border-line">
-        <div className="container-page grid gap-12 pt-14 pb-16 md:grid-cols-12 md:pt-24 md:pb-24">
+        <div className="container-page grid gap-12 pt-10 pb-12 md:grid-cols-12 md:pt-24 md:pb-24">
           <div className="md:col-span-7 lg:col-span-8">
             <p className="eyebrow">Structural engineering & construction · Gangtok, Sikkim</p>
-            <h1 className="mt-5 text-[2.6rem] font-semibold leading-[1.04] md:text-7xl">
+            <h1 className="mt-4 text-[2.4rem] font-semibold leading-[1.04] md:mt-5 md:text-7xl">
               Built around your dreams. Strengthened by engineering.
             </h1>
-            <p className="mt-6 font-display text-xl font-medium md:text-2xl">Your home. Your business. Your next big plan.</p>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
+            <p className="mt-5 font-display text-lg font-medium md:mt-6 md:text-2xl">Your home. Your business. Your next big plan.</p>
+            <p className="mt-4 max-w-2xl text-[1.0625rem] leading-relaxed text-muted md:mt-5 md:text-xl">
               Whatever you are building, or hoping to preserve, BALKAPSO brings structural engineering, practical experience and care
               to the decisions that matter.
             </p>
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row md:mt-9">
               <Link href="/contact" className="btn btn-primary">
                 Let&apos;s discuss your project <ArrowRight />
               </Link>
@@ -97,7 +97,7 @@ export default function Home() {
           </div>
 
           {/* Text-only "spec sheet" in place of a hero photograph */}
-          <aside className="self-end md:col-span-5 lg:col-span-4" aria-label="At a glance">
+          <aside className="hidden self-end md:col-span-5 md:block lg:col-span-4" aria-label="At a glance">
             <dl className="border border-line-strong bg-white font-mono text-sm">
               {[
                 ["Specialism", "Retrofitting & strengthening"],
@@ -121,9 +121,9 @@ export default function Home() {
         <div className="container-page">
         <dl className="grid grid-cols-2 gap-px bg-line md:grid-cols-4">
           {facts.map((f) => (
-            <div key={f.value} className="bg-paper py-9 pr-4 pl-4 first:pl-0 md:py-12 md:px-8 md:first:pl-0 [&:nth-child(3)]:pl-0 md:[&:nth-child(3)]:pl-8">
-              <dt className="font-display text-3xl font-semibold tracking-tight md:text-4xl">{f.value}</dt>
-              <dd className="mt-3 text-sm leading-relaxed text-muted">{f.label}</dd>
+            <div key={f.value} className="bg-paper py-6 pr-3 pl-4 first:pl-0 md:py-12 md:px-8 md:first:pl-0 [&:nth-child(3)]:pl-0 md:[&:nth-child(3)]:pl-8">
+              <dt className="font-display text-2xl font-semibold tracking-tight md:text-4xl">{f.value}</dt>
+              <dd className="mt-2 text-[0.8125rem] leading-relaxed text-muted md:mt-3 md:text-sm">{f.label}</dd>
             </div>
           ))}
         </dl>
@@ -145,14 +145,14 @@ export default function Home() {
         <ol className="border-t border-line">
           {services.map((s, i) => (
             <li key={s.slug} className="border-b border-line">
-              <Link href={`/services/${s.slug}`} className="group grid gap-2 py-7 md:grid-cols-[3rem_1fr_auto] md:gap-6">
-                <span className="font-mono text-sm text-muted">{String(i + 1).padStart(2, "0")}</span>
+              <Link href={`/services/${s.slug}`} className="group grid grid-cols-[2rem_1fr_auto] gap-x-3 gap-y-2 py-5 md:grid-cols-[3rem_1fr_auto] md:gap-6 md:py-7">
+                <span className="pt-1 font-mono text-sm text-muted md:pt-0">{String(i + 1).padStart(2, "0")}</span>
                 <span>
-                  <span className="block text-xl font-semibold group-hover:text-accent md:text-2xl">{s.name}</span>
-                  <span className="mt-2 block font-semibold">{s.tagline}</span>
-                  <span className="mt-2 block max-w-xl leading-relaxed text-muted">{s.summary}</span>
+                  <span className="block text-lg font-semibold leading-snug group-hover:text-accent md:text-2xl">{s.name}</span>
+                  <span className="mt-1 block text-muted md:mt-2 md:font-semibold md:text-ink">{s.tagline}</span>
+                  <span className="mt-2 hidden max-w-xl leading-relaxed text-muted md:block">{s.summary}</span>
                 </span>
-                <ArrowRight className="hidden size-5 self-center text-accent transition-transform group-hover:translate-x-1 md:block" />
+                <ArrowRight className="size-5 self-center text-accent transition-transform group-hover:translate-x-1" />
               </Link>
             </li>
           ))}
@@ -171,13 +171,13 @@ export default function Home() {
       >
         <ul className="grid gap-x-8 sm:grid-cols-2">
           {warningSigns.map((s) => (
-            <li key={s} className="flex gap-3 border-b border-line py-4 leading-relaxed">
+            <li key={s} className="flex gap-3 border-b border-line py-3 leading-relaxed md:py-4">
               <Check className="mt-1 size-4 shrink-0 text-accent" />
               {s}
             </li>
           ))}
         </ul>
-        <div className="mt-10 flex flex-col gap-4 bg-accent-soft p-6 sm:flex-row sm:items-center sm:justify-between md:p-8">
+        <div className="mt-8 flex flex-col gap-4 bg-accent-soft p-5 sm:flex-row sm:items-center sm:justify-between md:mt-10 md:p-8">
           <p className="max-w-md leading-relaxed">
             <strong className="font-semibold">Noticed one of these?</strong> Send us a photo on WhatsApp. We&apos;ll tell you
             whether it needs a closer look.
@@ -201,9 +201,9 @@ export default function Home() {
       >
         <ol className="grid gap-px bg-line sm:grid-cols-2">
           {steps.map((s, i) => (
-            <li key={s.title} className="bg-paper p-6 md:p-8">
+            <li key={s.title} className="bg-paper py-5 md:p-8">
               <span className="font-mono text-sm text-accent">Step {i + 1}</span>
-              <h3 className="mt-3 text-xl font-semibold">{s.title}</h3>
+              <h3 className="mt-2 text-xl font-semibold md:mt-3">{s.title}</h3>
               <p className="mt-2 leading-relaxed text-muted">{s.body}</p>
             </li>
           ))}
@@ -215,8 +215,8 @@ export default function Home() {
 
       {/* Featured project */}
       <Section label="04 · Featured project" title={featured.title} intro={`${featured.category} · ${featured.location} · ${featured.year}`}>
-        <p className="text-xl leading-relaxed md:text-2xl">{featured.summary}</p>
-        <p className="mt-6 leading-relaxed text-muted">{featured.challenge}</p>
+        <p className="text-lg leading-relaxed md:text-2xl">{featured.summary}</p>
+        <p className="mt-6 hidden leading-relaxed text-muted md:block">{featured.challenge}</p>
         <ul className="mt-8 grid gap-x-8 sm:grid-cols-2">
           {featured.work.map((w) => (
             <li key={w} className="flex gap-3 border-t border-line py-3.5 text-sm leading-relaxed">
@@ -232,8 +232,8 @@ export default function Home() {
 
       {/* Founder quote */}
       <section className="border-b border-line bg-white">
-        <figure className="container-page py-20 md:py-28">
-          <blockquote className="max-w-4xl font-display text-3xl font-medium leading-[1.2] tracking-tight md:text-5xl">
+        <figure className="container-page py-14 md:py-28">
+          <blockquote className="max-w-4xl font-display text-[1.75rem] font-medium leading-[1.2] tracking-tight md:text-5xl">
             <span className="text-accent">“</span>Behind every project is someone who is trusting us with their
             future.<span className="text-accent">”</span>
           </blockquote>
@@ -252,9 +252,9 @@ export default function Home() {
 
       {/* Why us */}
       <Section label="05 · Why BALKAPSO" title="Your investment deserves thoughtful engineering.">
-        <div className="grid gap-x-10 gap-y-10 sm:grid-cols-2">
+        <div className="grid gap-x-10 gap-y-7 sm:grid-cols-2 md:gap-y-10">
           {principles.map((p) => (
-            <div key={p.title} className="border-t-2 border-ink pt-5 sm:last:col-span-2">
+            <div key={p.title} className="border-t-2 border-ink pt-4 sm:last:col-span-2 md:pt-5">
               <h3 className="text-lg font-semibold">{p.title}</h3>
               <p className="mt-2 leading-relaxed text-muted">{p.body}</p>
             </div>
@@ -270,7 +270,7 @@ export default function Home() {
         <ul className="border-t border-line">
           {articles.map((a) => (
             <li key={a.slug} className="border-b border-line">
-              <Link href={`/insights/${a.slug}`} className="group block py-6">
+              <Link href={`/insights/${a.slug}`} className="group block py-5 md:py-6">
                 <span className="block text-lg font-semibold leading-snug group-hover:text-accent">{a.title}</span>
                 <span className="mt-2 block font-mono text-xs text-muted">{a.readingMinutes} min read</span>
               </Link>
@@ -281,7 +281,7 @@ export default function Home() {
 
       {/* FAQ */}
       <Section label="08 · FAQ" title="Common questions" intro={<Link href="/faq" className="link-arrow">All questions <ArrowRight /></Link>}>
-        <FaqList items={homeFaqs} />
+        <FaqList items={homeFaqs} mobileLimit={3} />
       </Section>
       <JsonLd data={faqJsonLd(homeFaqs)} />
 

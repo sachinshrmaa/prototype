@@ -29,10 +29,10 @@ export default function ContactPage() {
         crumbs={[{ name: "Contact", href: "/contact" }]}
       />
 
-      <div className="container-page grid gap-16 py-16 md:grid-cols-12 md:gap-8 md:py-24">
+      <div className="container-page grid gap-14 py-12 md:grid-cols-12 md:gap-8 md:py-24">
         <section className="md:col-span-7 md:pr-10" aria-labelledby="enquiry">
           <h2 id="enquiry" className="text-2xl font-semibold md:text-3xl">Send an enquiry</h2>
-          <p className="mt-3 mb-10 leading-relaxed text-muted">Fields marked with * are required.</p>
+          <p className="mt-3 mb-8 leading-relaxed text-muted md:mb-10">Fields marked with * are required.</p>
           <ContactForm />
         </section>
 

@@ -18,11 +18,11 @@ export function Section({
 }) {
   return (
     <section id={id} className={`border-b border-line ${className}`}>
-      <div className="container-page grid gap-10 py-16 md:grid-cols-12 md:gap-8 md:py-24">
+      <div className="container-page grid gap-7 py-12 md:grid-cols-12 md:gap-8 md:py-24">
         <div className="md:col-span-4">
           <p className="eyebrow">{label}</p>
-          <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-[2.5rem]">{title}</h2>
-          {intro && <p className="mt-5 leading-relaxed text-muted">{intro}</p>}
+          <h2 className="mt-3 text-[1.75rem] font-semibold leading-tight md:mt-4 md:text-[2.5rem]">{title}</h2>
+          {intro && <p className="mt-4 leading-relaxed text-muted md:mt-5">{intro}</p>}
         </div>
         <div className="md:col-span-8 md:pl-8">{children}</div>
       </div>

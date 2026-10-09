@@ -22,9 +22,9 @@ export default function ServicesPage() {
         crumbs={[{ name: "Services", href: "/services" }]}
       />
 
-      <div className="container-page py-8 md:py-12">
+      <div className="container-page py-2 md:py-12">
         {services.map((s, i) => (
-          <article key={s.slug} className="grid gap-6 border-b border-line py-12 last:border-0 md:grid-cols-12 md:gap-8 md:py-16">
+          <article key={s.slug} className="grid gap-6 border-b border-line py-10 last:border-0 md:grid-cols-12 md:gap-8 md:py-16">
             <div className="md:col-span-5">
               <span className="font-mono text-sm text-accent">{String(i + 1).padStart(2, "0")}</span>
               <h2 className="mt-3 text-2xl font-semibold leading-tight md:text-3xl">
@@ -36,7 +36,7 @@ export default function ServicesPage() {
                 Learn more <ArrowRight />
               </Link>
             </div>
-            <ul className="md:col-span-7 md:pl-8">
+            <ul className="hidden md:col-span-7 md:block md:pl-8">
               {s.scope.map((item) => (
                 <li key={item.title} className="border-t border-line py-4 first:border-t-0 md:first:border-t">
                   <h3 className="font-semibold">{item.title}</h3>

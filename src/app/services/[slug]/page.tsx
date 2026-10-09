@@ -62,7 +62,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
         </div>
       </PageHero>
 
-      <div className="container-page grid gap-14 py-16 md:grid-cols-12 md:gap-8 md:py-24">
+      <div className="container-page grid gap-12 py-12 md:grid-cols-12 md:gap-8 md:py-24">
         <div className="md:col-span-8 md:pr-10">
           <div className="prose-body">
             {service.intro.map((p) => (
@@ -70,7 +70,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
             ))}
           </div>
 
-          <h2 className="mt-16 text-2xl font-semibold md:text-3xl">{service.signs.heading}</h2>
+          <h2 className="mt-12 text-2xl font-semibold md:mt-16 md:text-3xl">{service.signs.heading}</h2>
           <ul className="mt-6">
             {service.signs.items.map((item) => (
               <li key={item} className="flex gap-3 border-b border-line py-4 leading-relaxed">
@@ -80,10 +80,10 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
             ))}
           </ul>
 
-          <h2 className="mt-16 text-2xl font-semibold md:text-3xl">What the work can include</h2>
+          <h2 className="mt-12 text-2xl font-semibold md:mt-16 md:text-3xl">What the work can include</h2>
           <div className="mt-6 grid gap-px bg-line sm:grid-cols-2">
             {service.scope.map((s) => (
-              <div key={s.title} className="bg-paper p-6">
+              <div key={s.title} className="bg-paper p-5 md:p-6">
                 <h3 className="font-semibold">{s.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted">{s.body}</p>
               </div>
@@ -94,7 +94,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
             <p className="mt-10 border-l-2 border-accent bg-accent-soft p-5 leading-relaxed">{service.note}</p>
           )}
 
-          <h2 className="mt-16 text-2xl font-semibold md:text-3xl">Frequently asked questions</h2>
+          <h2 className="mt-12 text-2xl font-semibold md:mt-16 md:text-3xl">Frequently asked questions</h2>
           <div className="mt-6">
             <FaqList items={service.faqs} />
           </div>
@@ -113,7 +113,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
                 ))}
               </ul>
               <Link href="/contact" className="btn btn-primary mt-7 w-full">
-                Request an assessment
+                Let&apos;s discuss your project
               </Link>
               <a href={site.phoneHref} className="mt-3 block text-center font-mono text-sm text-muted hover:text-accent">
                 or call {site.phone}

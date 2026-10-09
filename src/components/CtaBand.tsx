@@ -14,12 +14,17 @@ export function CtaBand({
 }) {
   return (
     <section className="bg-ink text-white">
-      <div className="container-page grid gap-10 py-16 md:grid-cols-12 md:py-24">
+      <div className="container-page grid gap-8 py-12 md:grid-cols-12 md:gap-10 md:py-24">
         <div className="md:col-span-7">
           <p className="eyebrow !text-[#93b4f8]">Start with a conversation</p>
-          <h2 className="mt-4 text-3xl font-semibold leading-tight md:text-5xl">{title}</h2>
-          {body.map((p) => (
-            <p key={p.slice(0, 32)} className="mt-6 max-w-xl text-lg leading-relaxed text-white/70">{p}</p>
+          <h2 className="mt-3 text-[1.75rem] font-semibold leading-tight md:mt-4 md:text-5xl">{title}</h2>
+          {body.map((p, i) => (
+            <p
+              key={p.slice(0, 32)}
+              className={`mt-5 max-w-xl leading-relaxed text-white/70 md:mt-6 md:text-lg ${i === 0 && body.length > 1 ? "hidden md:block" : ""}`}
+            >
+              {p}
+            </p>
           ))}
         </div>
         <div className="flex flex-col justify-end gap-3 md:col-span-5 md:items-end">

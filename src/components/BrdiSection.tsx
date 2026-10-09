@@ -32,7 +32,7 @@ export function BrdiSection({ label, short = false, className }: { label: string
 
       {!short && (
         <>
-          <h3 className="eyebrow mt-10">Our areas of exploration include</h3>
+          <h3 className="eyebrow mt-8 md:mt-10">Our areas of exploration include</h3>
           <ul className="mt-3 max-w-2xl">
             {areas.map((a) => (
               <li key={a} className="flex gap-3 border-b border-line py-3.5 leading-relaxed">
@@ -41,7 +41,7 @@ export function BrdiSection({ label, short = false, className }: { label: string
               </li>
             ))}
           </ul>
-          <div className="prose-body mt-8 max-w-2xl">
+          <div className="prose-body mt-6 max-w-2xl md:mt-8">
             <p>
               We share the journey as it develops: the ideas, the experiments, the findings and the lessons that help us understand
               more.
@@ -51,7 +51,7 @@ export function BrdiSection({ label, short = false, className }: { label: string
         </>
       )}
 
-      <div className="mt-10 flex flex-wrap items-center gap-6">
+      <div className="mt-8 flex flex-wrap items-center gap-6 md:mt-10">
         {site.brdiUrl && (
           <a href={site.brdiUrl} className="btn btn-primary" target="_blank" rel="noopener noreferrer">
             Visit BRDI <ArrowRight />

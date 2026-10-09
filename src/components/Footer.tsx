@@ -7,7 +7,7 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-ink pb-20 text-white/70 md:pb-0">
-      <div className="container-page grid gap-12 border-t border-white/10 py-16 md:grid-cols-12">
+      <div className="container-page grid gap-10 border-t border-white/10 py-12 md:grid-cols-12 md:gap-12 md:py-16">
         <div className="md:col-span-4">
           <Logo light />
           <p className="mt-6 max-w-xs leading-relaxed">
@@ -15,7 +15,7 @@ export function Footer() {
           </p>
         </div>
 
-        <div className="md:col-span-3">
+        <div className="hidden md:col-span-3 md:block">
           <h2 className="font-mono text-xs uppercase tracking-widest text-white/40">Services</h2>
           <ul className="mt-5 space-y-3 text-sm">
             {services.map((s) => (
@@ -28,7 +28,7 @@ export function Footer() {
 
         <div className="md:col-span-2">
           <h2 className="font-mono text-xs uppercase tracking-widest text-white/40">Company</h2>
-          <ul className="mt-5 space-y-3 text-sm">
+          <ul className="mt-5 grid grid-cols-2 gap-x-6 gap-y-3 text-sm md:block md:space-y-3">
             {[
               ["/about", "About us"],
               ["/projects", "Projects"],
