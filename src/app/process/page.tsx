@@ -79,7 +79,7 @@ export default function ProcessPage() {
         ))}
       </ol>
 
-      <CtaBand title="Ready for step one?" body="It starts with a conversation, and it costs nothing to ask. Send us a message describing your building." />
+      <CtaBand />
     </>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BrdiSection } from "@/components/BrdiSection";
 import { CtaBand } from "@/components/CtaBand";
 import { FaqList, faqJsonLd } from "@/components/FaqList";
 import { ArrowRight, Chat, Check } from "@/components/Icons";
@@ -40,20 +41,24 @@ const steps = [
 
 const principles = [
   {
-    title: "Engineers, not just builders",
-    body: "Our work is led by structural engineering and research in retrofitting. Every recommendation is backed by analysis and testing.",
+    title: "We take time to understand.",
+    body: "Your priorities, the site and the structure shape our recommendations.",
   },
   {
-    title: "Repair before replace",
-    body: "We look for ways to save and strengthen what you already have before anyone talks about demolition.",
+    title: "We make the decisions understandable.",
+    body: "You should know what we are proposing, why it matters and what the next step involves.",
   },
   {
-    title: "Built for the hills",
-    body: "Slopes, monsoon water, landslides and earthquakes shape how we design and build. We work here, and we know these conditions.",
+    title: "We connect design with site practice.",
+    body: "Drawings, detailing and workmanship all contribute to how a structure performs.",
   },
   {
-    title: "Straight answers",
-    body: "We tell you what the problem is, what it will take to fix it, and what it will cost, before work begins.",
+    title: "We understand the challenges of the hills.",
+    body: "Sloping sites, monsoon exposure and seismic demands require careful consideration throughout the project.",
+  },
+  {
+    title: "We keep learning.",
+    body: "Research and practical experience encourage us to question, evaluate and improve our methods.",
   },
 ];
 
@@ -69,23 +74,24 @@ export default function Home() {
           <div className="md:col-span-7 lg:col-span-8">
             <p className="eyebrow">Structural engineering & construction · Gangtok, Sikkim</p>
             <h1 className="mt-5 text-[2.6rem] font-semibold leading-[1.04] md:text-7xl">
-              Stronger, safer buildings for a seismic state.
+              Built around your dreams. Strengthened by engineering.
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
-              BALKAPSO assesses, strengthens, waterproofs and builds structures across Sikkim. We retrofit ageing buildings,
-              design earthquake-resistant new ones, and fix the seepage that quietly damages them.
+            <p className="mt-6 font-display text-xl font-medium md:text-2xl">Your home. Your business. Your next big plan.</p>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted md:text-xl">
+              Whatever you are building, or hoping to preserve, BALKAPSO brings structural engineering, practical experience and care
+              to the decisions that matter.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link href="/contact" className="btn btn-primary">
-                Book a site assessment <ArrowRight />
+                Let&apos;s discuss your project <ArrowRight />
               </Link>
               <a
-                href={whatsappLink("Hello BALKAPSO, I would like to discuss a building concern.")}
+                href={whatsappLink("Hello BALKAPSO, I would like to discuss my project.")}
                 className="btn btn-outline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Chat /> Send photos on WhatsApp
+                <Chat /> Connect on WhatsApp
               </a>
             </div>
           </div>
@@ -127,8 +133,14 @@ export default function Home() {
       {/* Services */}
       <Section
         label="01 · Services"
-        title="What we do"
-        intro="Five services, one approach: understand the structure first, then do the right work, properly."
+        title="Expertise for every stage of your building's journey."
+        intro={
+          <>
+            We design new structures, assess existing buildings, strengthen what needs support, and deliver construction and
+            waterproofing solutions suited to your project.
+            <span className="mt-4 block">From the first question to the work on site, we help you move forward with clarity.</span>
+          </>
+        }
       >
         <ol className="border-t border-line">
           {services.map((s, i) => (
@@ -137,6 +149,7 @@ export default function Home() {
                 <span className="font-mono text-sm text-muted">{String(i + 1).padStart(2, "0")}</span>
                 <span>
                   <span className="block text-xl font-semibold group-hover:text-accent md:text-2xl">{s.name}</span>
+                  <span className="mt-2 block font-semibold">{s.tagline}</span>
                   <span className="mt-2 block max-w-xl leading-relaxed text-muted">{s.summary}</span>
                 </span>
                 <ArrowRight className="hidden size-5 self-center text-accent transition-transform group-hover:translate-x-1 md:block" />
@@ -144,6 +157,9 @@ export default function Home() {
             </li>
           ))}
         </ol>
+        <Link href="/services" className="link-arrow mt-8">
+          Explore our services <ArrowRight />
+        </Link>
       </Section>
 
       {/* Warning signs */}
@@ -163,12 +179,17 @@ export default function Home() {
         </ul>
         <div className="mt-10 flex flex-col gap-4 bg-accent-soft p-6 sm:flex-row sm:items-center sm:justify-between md:p-8">
           <p className="max-w-md leading-relaxed">
-            <strong className="font-semibold">Noticed one of these?</strong> Send us a photo. We will tell you whether it
-            needs a closer look.
+            <strong className="font-semibold">Noticed one of these?</strong> Send us a photo on WhatsApp. We&apos;ll tell you
+            whether it needs a closer look.
           </p>
-          <Link href="/services/structural-assessment-ndt" className="link-arrow shrink-0">
-            About structural assessment <ArrowRight />
-          </Link>
+          <a
+            href={whatsappLink("Hello BALKAPSO, I have noticed a sign in my building and would like you to take a look.")}
+            className="link-arrow shrink-0"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Connect on WhatsApp <ArrowRight />
+          </a>
         </div>
       </Section>
 
@@ -213,8 +234,8 @@ export default function Home() {
       <section className="border-b border-line bg-white">
         <figure className="container-page py-20 md:py-28">
           <blockquote className="max-w-4xl font-display text-3xl font-medium leading-[1.2] tracking-tight md:text-5xl">
-            <span className="text-accent">“</span>Every structure we design holds someone&apos;s dreams, their hard-earned
-            savings, and their future. We don&apos;t just build structures. We build trust.<span className="text-accent">”</span>
+            <span className="text-accent">“</span>Behind every project is someone who is trusting us with their
+            future.<span className="text-accent">”</span>
           </blockquote>
           <figcaption className="mt-8 flex items-center gap-4">
             <span className="h-px w-10 bg-accent" aria-hidden />
@@ -223,17 +244,17 @@ export default function Home() {
               <span className="block text-sm text-muted">Founder & CEO, BALKAPSO Construction</span>
             </span>
           </figcaption>
-          <Link href="/about" className="link-arrow mt-8">
-            Read the founder&apos;s story <ArrowRight />
+          <Link href="/about#founder" className="link-arrow mt-8">
+            Read the founder&apos;s message <ArrowRight />
           </Link>
         </figure>
       </section>
 
       {/* Why us */}
-      <Section label="05 · Why BALKAPSO" title="Why owners and institutions choose us">
+      <Section label="05 · Why BALKAPSO" title="Your investment deserves thoughtful engineering.">
         <div className="grid gap-x-10 gap-y-10 sm:grid-cols-2">
           {principles.map((p) => (
-            <div key={p.title} className="border-t-2 border-ink pt-5">
+            <div key={p.title} className="border-t-2 border-ink pt-5 sm:last:col-span-2">
               <h3 className="text-lg font-semibold">{p.title}</h3>
               <p className="mt-2 leading-relaxed text-muted">{p.body}</p>
             </div>
@@ -241,8 +262,11 @@ export default function Home() {
         </div>
       </Section>
 
+      {/* Research & learning */}
+      <BrdiSection label="06 · Research & Learning" className="bg-white" />
+
       {/* Insights */}
-      <Section label="06 · Insights" title="Practical guides for building owners" intro="Plain-language advice from our engineers.">
+      <Section label="07 · Insights" title="Practical guides for building owners" intro="Plain-language advice from our engineers.">
         <ul className="border-t border-line">
           {articles.map((a) => (
             <li key={a.slug} className="border-b border-line">
@@ -256,7 +280,7 @@ export default function Home() {
       </Section>
 
       {/* FAQ */}
-      <Section label="07 · FAQ" title="Common questions" intro={<Link href="/faq" className="link-arrow">All questions <ArrowRight /></Link>}>
+      <Section label="08 · FAQ" title="Common questions" intro={<Link href="/faq" className="link-arrow">All questions <ArrowRight /></Link>}>
         <FaqList items={homeFaqs} />
       </Section>
       <JsonLd data={faqJsonLd(homeFaqs)} />

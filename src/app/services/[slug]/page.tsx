@@ -39,8 +39,8 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
   return (
     <>
       <PageHero
-        eyebrow="Service"
-        title={service.name}
+        eyebrow={service.name}
+        title={service.tagline}
         lede={service.summary}
         crumbs={[
           { name: "Services", href: "/services" },
@@ -49,7 +49,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
       >
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
           <Link href="/contact" className="btn btn-primary">
-            Discuss your project <ArrowRight />
+            Let&apos;s discuss your project <ArrowRight />
           </Link>
           <a
             href={whatsappLink(`Hello BALKAPSO, I would like to discuss ${service.name.toLowerCase()}.`)}
@@ -57,7 +57,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
             target="_blank"
             rel="noopener noreferrer"
           >
-            Ask on WhatsApp
+            Connect on WhatsApp
           </a>
         </div>
       </PageHero>

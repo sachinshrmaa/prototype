@@ -63,7 +63,7 @@ const organizationLd = {
   slogan: site.tagline,
   description: site.description,
   url: site.url,
-  logo: absoluteUrl("/icon.svg"),
+  logo: absoluteUrl("/icon-512.png"),
   image: absoluteUrl("/opengraph-image"),
   telephone: site.phone,
   email: site.email,

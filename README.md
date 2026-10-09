@@ -21,8 +21,8 @@ npm run build
 
 ## Before launch
 
-- [ ] Replace the placeholder phone/WhatsApp numbers in `src/lib/site.ts`
-- [ ] Confirm the email address (`info@balkapso.com`) exists
+- [x] Replace the placeholder phone/WhatsApp numbers in `src/lib/site.ts`
+- [ ] Confirm the email address (`contact@balkapso.com`) exists
 - [ ] Confirm the PIN code and map coordinates in `src/lib/site.ts`
 - [ ] Review project write-ups in `src/content/projects.ts` for accuracy
 - [ ] Submit `https://balkapso.com/sitemap.xml` in Google Search Console

@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { CtaBand } from "@/components/CtaBand";
+import { Gallery } from "@/components/Gallery";
 import { PageHero } from "@/components/PageHero";
+import { Section } from "@/components/Section";
+import { gallery } from "@/content/gallery";
 import { projects } from "@/content/projects";
 
 export const metadata: Metadata = {
@@ -16,7 +19,7 @@ export default function ProjectsPage() {
       <PageHero
         eyebrow="Projects"
         title="Selected work, explained."
-        lede="We describe our projects in words: what the problem was, what we did, and why. Because how a structure was strengthened matters more than how it looks in a photograph."
+        lede="What the problem was, what we did, and why. Below, a look at the damage we're called in to investigate, and the strengthening work that follows."
         crumbs={[{ name: "Projects", href: "/projects" }]}
       />
 
@@ -60,7 +63,11 @@ export default function ProjectsPage() {
         ))}
       </div>
 
-      <CtaBand title="Have a building that needs attention?" body="Whether it is a family home, a hotel or a heritage structure, tell us about it and we will explain what can be done." />
+      <Section id="gallery" label="Gallery" title="From the site." className="border-t bg-white">
+        <Gallery categories={gallery} />
+      </Section>
+
+      <CtaBand />
     </>
   );
 }

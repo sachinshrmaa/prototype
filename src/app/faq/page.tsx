@@ -32,7 +32,7 @@ export default function FaqPage() {
         ))}
       </div>
       <JsonLd data={faqJsonLd(allFaqs)} />
-      <CtaBand title="Still have a question?" body="Ask us directly. A short message with a photo is often enough for us to point you in the right direction." />
+      <CtaBand />
     </>
   );
 }

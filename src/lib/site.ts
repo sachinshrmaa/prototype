@@ -15,11 +15,10 @@ export const site = {
     role: "Founder & CEO, Design Head",
   },
 
-  // TODO: replace with real numbers before launch.
-  phone: "+91 00000 00000",
-  phoneHref: "tel:+910000000000",
-  whatsapp: "910000000000", // digits only, with country code
-  email: "info@balkapso.com",
+  phone: "+91 70762 19337",
+  phoneHref: "tel:+917076219337",
+  whatsapp: "917076219337", // digits only, with country code
+  email: "contact@balkapso.com",
 
   address: {
     street: "Near Greendale School, Daragaon, Tadong",
@@ -41,6 +40,10 @@ export const site = {
     instagram: "https://www.instagram.com/balkapso/",
     youtube: "https://www.youtube.com/@balkapso",
   },
+
+  // TODO: BRDI (BALKAPSO research & development initiative) website URL.
+  // "Visit BRDI" links are hidden until this is set.
+  brdiUrl: null as string | null,
 } as const;
 
 export const nav = [

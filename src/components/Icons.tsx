@@ -39,3 +39,12 @@ export const Menu = ({ className = "size-5" }: P) => (
 export const Close = ({ className = "size-5" }: P) => (
   <svg viewBox="0 0 24 24" className={className} {...base}><path d="M6 6l12 12M18 6 6 18" /></svg>
 );
+export const Facebook = ({ className = "size-5" }: P) => (
+  <svg viewBox="0 0 24 24" className={className} {...base}><path d="M15 3h-2a4 4 0 0 0-4 4v3H7v3h2v8h3v-8h2.5l.5-3h-3V7a1 1 0 0 1 1-1h2z" /></svg>
+);
+export const Instagram = ({ className = "size-5" }: P) => (
+  <svg viewBox="0 0 24 24" className={className} {...base}><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><path d="M17.5 6.5h.01" /></svg>
+);
+export const YouTube = ({ className = "size-5" }: P) => (
+  <svg viewBox="0 0 24 24" className={className} {...base}><path d="M2.5 8.5a3 3 0 0 1 2.7-3C7.4 5.2 9.7 5 12 5s4.6.2 6.8.5a3 3 0 0 1 2.7 3 31 31 0 0 1 0 7 3 3 0 0 1-2.7 3c-2.2.3-4.5.5-6.8.5s-4.6-.2-6.8-.5a3 3 0 0 1-2.7-3 31 31 0 0 1 0-7z" /><path d="m10 9 5 3-5 3z" /></svg>
+);

@@ -3,7 +3,7 @@
 import { useState, type FormEvent } from "react";
 import { services } from "@/content/services";
 import { site, whatsappLink } from "@/lib/site";
-import { Chat, Mail } from "./Icons";
+import { Chat, Mail, Phone } from "./Icons";
 
 // No backend: the form composes the enquiry and hands it to WhatsApp or the
 // visitor's email app. Swap handleSubmit for a server action to store leads.
@@ -65,12 +65,11 @@ export function ContactForm() {
         </select>
       </label>
       <label className="block text-sm font-medium sm:col-span-2">
-        Tell us about the building and the concern <span className="text-accent">*</span>
+        Tell us about your project <span className="font-normal text-muted">(optional)</span>
         <textarea
           name="message"
-          required
           rows={5}
-          placeholder="Type of building, approximate age, number of floors, and what you have noticed (cracks, leaks, planned extension...)"
+          placeholder="What you're planning or what you've noticed: a new build, cracks, leaks, an extension..."
           className={fieldClass}
         />
       </label>
@@ -93,12 +92,26 @@ export function ContactForm() {
 
       <div className="sm:col-span-2">
         <button type="submit" className="btn btn-primary w-full sm:w-auto">
-          Send enquiry
+          Send my enquiry
         </button>
         <p className="mt-4 text-sm text-muted">
           {channel === "whatsapp"
-            ? "This opens WhatsApp with your message filled in. You can attach photos there before sending."
-            : "This opens your email app with your message filled in. You can attach photos before sending."}
+            ? "This opens WhatsApp with your message filled in. You can attach photos or drawings there before sending."
+            : "This opens your email app with your message filled in. You can attach photos or drawings before sending."}
+        </p>
+        <p className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-line pt-6 text-sm">
+          <span className="text-muted">Prefer to chat?</span>
+          <a
+            href={whatsappLink("Hello BALKAPSO, I would like to discuss my project.")}
+            className="flex items-center gap-2 font-medium hover:text-accent"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Chat /> Connect on WhatsApp
+          </a>
+          <a href={site.phoneHref} className="flex items-center gap-2 font-medium hover:text-accent">
+            <Phone /> Call {site.phone}
+          </a>
         </p>
       </div>
     </form>

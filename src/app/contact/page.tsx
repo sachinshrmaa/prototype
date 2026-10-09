@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   const channels = [
     { icon: <Phone className="size-5" />, label: "Call", value: site.phone, href: site.phoneHref },
-    { icon: <Chat className="size-5" />, label: "WhatsApp", value: "Send photos and a message", href: whatsappLink("Hello BALKAPSO, I would like to discuss a building concern."), external: true },
+    { icon: <Chat className="size-5" />, label: "WhatsApp", value: "Send photos and a message", href: whatsappLink("Hello BALKAPSO, I would like to discuss my project."), external: true },
     { icon: <Mail className="size-5" />, label: "Email", value: site.email, href: `mailto:${site.email}` },
     { icon: <Pin className="size-5" />, label: "Office", value: `${site.address.street}, ${site.address.locality}, ${site.address.district}, ${site.address.region} ${site.address.postalCode}`, href: site.mapsUrl, external: true },
     { icon: <Clock className="size-5" />, label: "Hours", value: site.hours },
@@ -24,8 +24,8 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Tell us about your building."
-        lede="Describe the concern or the project, and an engineer will get back to you. The quickest way is WhatsApp: send a few photos and we can often advise on the next step straight away."
+        title="Your next chapter starts with a conversation."
+        lede="Tell us where you're starting and what you hope to achieve. Drawings, a photo of a concern, or just an idea: any of it is a good place to begin."
         crumbs={[{ name: "Contact", href: "/contact" }]}
       />
 

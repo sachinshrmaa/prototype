@@ -9,7 +9,7 @@ export function MobileActionBar() {
         <Phone /> Call
       </a>
       <a
-        href={whatsappLink("Hello BALKAPSO, I would like to discuss a building concern.")}
+        href={whatsappLink("Hello BALKAPSO, I would like to discuss my project.")}
         target="_blank"
         rel="noopener noreferrer"
         className="flex h-14 items-center justify-center gap-2 bg-accent font-medium text-white"

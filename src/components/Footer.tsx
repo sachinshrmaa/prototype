@@ -42,6 +42,11 @@ export function Footer() {
                 <Link href={href} className="hover:text-white">{label}</Link>
               </li>
             ))}
+            {site.brdiUrl && (
+              <li>
+                <a href={site.brdiUrl} className="hover:text-white" target="_blank" rel="noopener noreferrer">BRDI</a>
+              </li>
+            )}
           </ul>
         </div>
 

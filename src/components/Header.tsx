@@ -41,7 +41,7 @@ export function Header() {
             <Phone /> {site.phone}
           </a>
           <Link href="/contact" className="btn btn-primary !min-h-10 !px-4 text-sm">
-            Get an assessment
+            Discuss your project
           </Link>
         </div>
 
@@ -73,7 +73,7 @@ export function Header() {
             ))}
           </ul>
           <div className="container-page pb-6">
-            <Link href="/contact" className="btn btn-primary w-full">Get an assessment</Link>
+            <Link href="/contact" className="btn btn-primary w-full">Discuss your project</Link>
           </div>
         </nav>
       )}

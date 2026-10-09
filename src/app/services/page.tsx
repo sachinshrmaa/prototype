@@ -17,7 +17,7 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="Engineering-led services for existing and new buildings."
+        title="Expertise for every stage of your building's journey."
         lede="From a single cracked column to a complete earthquake-resistant building, every service starts with understanding the structure."
         crumbs={[{ name: "Services", href: "/services" }]}
       />
@@ -30,7 +30,8 @@ export default function ServicesPage() {
               <h2 className="mt-3 text-2xl font-semibold leading-tight md:text-3xl">
                 <Link href={`/services/${s.slug}`} className="hover:text-accent">{s.name}</Link>
               </h2>
-              <p className="mt-4 leading-relaxed text-muted">{s.summary}</p>
+              <p className="mt-4 font-semibold">{s.tagline}</p>
+              <p className="mt-2 leading-relaxed text-muted">{s.summary}</p>
               <Link href={`/services/${s.slug}`} className="link-arrow mt-6">
                 Learn more <ArrowRight />
               </Link>
@@ -47,7 +48,7 @@ export default function ServicesPage() {
         ))}
       </div>
 
-      <CtaBand title="Not sure which service you need?" body="Most of our projects start with a simple conversation. Describe what you are seeing, or what you want to build, and we will point you to the right first step." />
+      <CtaBand />
     </>
   );
 }
