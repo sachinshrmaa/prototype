@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { BrdiSection } from "@/components/BrdiSection";
 import { CtaBand } from "@/components/CtaBand";
@@ -232,22 +233,32 @@ export default function Home() {
 
       {/* Founder quote */}
       <section className="border-b border-line bg-white">
-        <figure className="container-page py-14 md:py-28">
-          <blockquote className="max-w-4xl font-display text-[1.75rem] font-medium leading-[1.2] tracking-tight md:text-5xl">
-            <span className="text-accent">“</span>Behind every project is someone who is trusting us with their
-            future.<span className="text-accent">”</span>
-          </blockquote>
-          <figcaption className="mt-8 flex items-center gap-4">
-            <span className="h-px w-10 bg-accent" aria-hidden />
-            <span>
-              <span className="block font-semibold">{site.founder.name}</span>
-              <span className="block text-sm text-muted">Founder & CEO, BALKAPSO Construction</span>
-            </span>
-          </figcaption>
-          <Link href="/about#founder" className="link-arrow mt-8">
-            Read the founder&apos;s message <ArrowRight />
-          </Link>
-        </figure>
+        <div className="container-page grid gap-8 py-14 md:grid-cols-12 md:items-center md:gap-12 md:py-28">
+          <Image
+            src="/solmon-sharma.jpeg"
+            width={1262}
+            height={1246}
+            alt={site.founder.name}
+            sizes="(min-width: 768px) 30vw, 12rem"
+            className="aspect-square w-48 object-cover md:col-span-4 md:w-full"
+          />
+          <figure className="md:col-span-8">
+            <blockquote className="max-w-4xl font-display text-[1.75rem] font-medium leading-[1.2] tracking-tight md:text-5xl">
+              <span className="text-accent">“</span>Behind every project is someone who is trusting us with their
+              future.<span className="text-accent">”</span>
+            </blockquote>
+            <figcaption className="mt-8 flex items-center gap-4">
+              <span className="h-px w-10 bg-accent" aria-hidden />
+              <span>
+                <span className="block font-semibold">{site.founder.name}</span>
+                <span className="block text-sm text-muted">Founder & CEO, BALKAPSO Construction</span>
+              </span>
+            </figcaption>
+            <Link href="/about#founder" className="link-arrow mt-8">
+              Read the founder&apos;s message <ArrowRight />
+            </Link>
+          </figure>
+        </div>
       </section>
 
       {/* Why us */}

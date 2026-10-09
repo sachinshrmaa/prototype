@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { BrdiSection } from "@/components/BrdiSection";
 import { CtaBand } from "@/components/CtaBand";
@@ -15,10 +16,10 @@ export const metadata: Metadata = {
 };
 
 const team = [
-  { name: "Solmon Sharma", role: "Founder & CEO", focus: "Design Head" },
-  { name: "Upash Tamang", role: "Chief Operating Officer", focus: "Business strategy, growth and stakeholder relations" },
-  { name: "Salmone Rezia Targain", role: "Manager", focus: "Project management, team supervision and coordination" },
-  { name: "Palden Gurung", role: "Project Engineer", focus: "Site supervision and quality assurance" },
+  { name: "Solmon Sharma", photo: "/team/solmon-sharma.jpg", role: "Founder & CEO", focus: "Design Head" },
+  { name: "Upash Tamang", photo: "/team/upash-tamang.jpg", role: "Chief Operating Officer", focus: "Business strategy, growth and stakeholder relations" },
+  { name: "Palden Gurung", photo: "/team/palden-gurung.jpg", role: "Senior Site Engineer", focus: "Site supervision and quality assurance" },
+  { name: "Arati Sharma", photo: "/team/arati-sharma.jpg", role: "Site Engineer", focus: "On-site execution and progress monitoring" },
 ];
 
 const values = [
@@ -55,6 +56,16 @@ export default function AboutPage() {
         label="Message from the founder"
         title="“Behind every project is someone who is trusting us with their future.”"
         className="scroll-mt-20"
+        aside={
+          <Image
+            src="/solmon-sharma.jpeg"
+            width={1262}
+            height={1246}
+            alt={site.founder.name}
+            sizes="(min-width: 768px) 25vw, 12rem"
+            className="mb-6 aspect-square w-48 object-cover md:mb-8 md:w-full"
+          />
+        }
       >
         <div className="prose-body max-w-2xl">
           <p>
@@ -134,10 +145,13 @@ export default function AboutPage() {
       <Section label="Our team" title="The people behind the work" intro="A focused team of engineers and project managers, based in Gangtok.">
         <ul className="border-t border-line">
           {team.map((m) => (
-            <li key={m.name} className="grid gap-1 border-b border-line py-6 sm:grid-cols-[1fr_1.3fr] sm:gap-6">
-              <div>
-                <p className="text-lg font-semibold">{m.name}</p>
-                <p className="font-mono text-sm text-accent">{m.role}</p>
+            <li key={m.name} className="grid gap-1 border-b border-line py-6 sm:grid-cols-[1fr_1.3fr] sm:items-center sm:gap-6">
+              <div className="flex items-center gap-4">
+                <Image src={m.photo} width={600} height={600} alt={m.name} sizes="4rem" className="size-16 shrink-0 object-cover" />
+                <div>
+                  <p className="text-lg font-semibold">{m.name}</p>
+                  <p className="font-mono text-sm text-accent">{m.role}</p>
+                </div>
               </div>
               <p className="leading-relaxed text-muted">{m.focus}</p>
             </li>

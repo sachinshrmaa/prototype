@@ -53,9 +53,7 @@ export function Gallery({ categories }: { categories: GalleryCategory[] }) {
                     loading="lazy"
                     sizes="(min-width: 768px) 22vw, 45vw"
                     className="aspect-[4/3] w-full object-cover transition-opacity group-hover:opacity-85"
-                  />
-                  <span className="mt-2 block text-sm leading-snug text-muted">{p.caption}</span>
-                </button>
+                  />                </button>
               </li>
             ))}
           </ul>
@@ -83,9 +81,7 @@ export function Gallery({ categories }: { categories: GalleryCategory[] }) {
       >
         {open && (
           <figure className="relative">
-            <Image src={open.src} width={open.width} height={open.height} alt={open.caption} className="max-h-[84vh] w-auto object-contain" />
-            <figcaption className="mt-3 text-sm text-white">{open.caption}</figcaption>
-            <button
+            <Image src={open.src} width={open.width} height={open.height} alt={open.caption} className="max-h-[84vh] w-auto object-contain" />            <button
               type="button"
               onClick={() => dialog.current?.close()}
               className="absolute top-2 right-2 bg-ink/70 p-2 text-white hover:bg-ink"
