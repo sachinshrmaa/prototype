@@ -77,7 +77,7 @@ export default function Home() {
             <h1 className="mt-4 text-[2.4rem] font-semibold leading-[1.04] md:mt-5 md:text-7xl">
               Built around your dreams. Strengthened by engineering.
             </h1>
-            <p className="mt-5 font-display text-lg font-medium md:mt-6 md:text-2xl">Your home. Your business. Your next big plan.</p>
+            <p className="mt-5 font-display text-lg font-medium md:mt-6 md:text-2xl">For everything you’ve built—and everything you’re planning</p>
             <p className="mt-4 max-w-2xl text-[1.0625rem] leading-relaxed text-muted md:mt-5 md:text-xl">
               Whatever you are building, or hoping to preserve, BALKAPSO brings structural engineering, practical experience and care
               to the decisions that matter.
